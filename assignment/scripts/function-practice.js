@@ -50,14 +50,14 @@ console.log(isPositive(50));
 //    array is empty, return `undefined`.
 
 function getLast(array) {
-  if (!array || array.length == 0) {
+  if (!array || array.length == 0 || array == []) {
     return undefined;
   }
   let lastItem = array[array.length - 1];
   return console.log('Last item:', lastItem);
 }
 console.log(getLast([5, 4, 10]));
-console.log('Find nothing and undefined', getLast(''));
+console.log('Return undefined', getLast());
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
@@ -78,24 +78,47 @@ console.log('Find 17:', find(17, [0, 8, 54, 978, 50]));
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {}
-console.log('Letter check:', isFirstLetter('a', 'orange'));
+function isFirstLetter(letter, string) {
+  if (string[0] === letter) {
+    return true;
+  }
+  return false;
+}
+console.log('Letter check:', isFirstLetter('a', 'cat'));
+console.log('Letter check:', isFirstLetter('o', 'octopus'));
+console.log('Letter check:', isFirstLetter('z', 'banana'));
 
-// 9. Function to return the sum of all numbers in an array
+// // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
   let sum = 0;
-  // TODO: loop to add items
-
-  // TODO: return the sum
+  if (array.length > 0) {
+    // TODO: loop to add items
+    for (let i = 0; i < array.length; i++) {
+      sum += array[i];
+    }
+    // TODO: return the sum
+    return sum;
+  }
 }
-console.log('Return sum of all:', sumAll([5, 10, 12]));
+
+console.log('Return sum of all:', sumAll([3, 2, 1, 0, 1]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-function allPositive() {}
 
-console.log('All positive array:', allPositive([5, 10, 12]));
+function allPositive(array) {
+  let blankArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+      blankArray.push(array[i]);
+    }
+  }
+  return blankArray;
+}
+
+console.log('All positive array:', allPositive([0, -2, 3, -4, 5]));
+
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
