@@ -54,10 +54,9 @@ function getLast(array) {
     return undefined;
   }
   let lastItem = array[array.length - 1];
-  return console.log('Last item:', lastItem);
+  return lastItem;
 }
 console.log(getLast([5, 4, 10]));
-console.log('Return undefined', getLast());
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
@@ -102,6 +101,7 @@ function sumAll(array) {
 }
 
 console.log('Return sum of all:', sumAll([3, 2, 1, 0, 1]));
+console.log('Return undefined', getLast());
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
@@ -123,8 +123,47 @@ console.log('All positive array:', allPositive([0, -2, 3, -4, 5]));
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
 
+//Codewars: When provided with a number between 0-9, return it in words.
+// Input :: 1
+// Output :: "One".
+// If your language supports it, try using a switch statement.
+
+// I am being provided any number values from 0-9 and 
+// will have to return the string value of that number. 
+// I created a function that takes in any number value. 
+// The function will evaluate the value and see if it's from 0-9.
+
+function switchItUp(number) {
+  switch (number) {
+    case 0:
+      return 'Zero';
+    case 1:
+      return 'One';
+    case 2:
+      return 'Two';
+    case 3:
+      return 'Three';
+    case 4:
+      return 'Four';
+    case 5:
+      return 'Five';
+    case 6:
+      return 'Six';
+    case 7:
+      return 'Seven';
+    case 8:
+      return 'Eight';
+    case 9:
+      return 'Nine';
+  }
+}
+
+console.log('Return One: ', switchItUp(1));
+console.log('Return Five: ', switchItUp(5));
+
 // DO NOT MODIFY
 // Used for automated testing
+
 try {
   module.exports = {
     hello,
